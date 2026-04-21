@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <title>🚗 VISION CAR - A Mais Nova Mecânica do Jardim Hilário! 🛠️</title>
+  
+  <meta property="og:title" content="🚗 VISION CAR - MECÂNICA NO JARDIM HILÁRIO | RUA MARIO PRETO, 55">
+  <meta property="og:description" content="🏠 RUA MARIO PRETO, 55 - JARDIM HILÁRIO 📍 FÁCIL DE ENCONTRAR: SEGUNDA RUA DEPOIS DO MERCADO REAL (SUBINDO)">
+  <meta property="og:image" content="https://viniciusxtrad.github.io/vision-car/bannergoogle.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:url" content="https://viniciusxtrad.github.io/vision-car">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Vision Car - Mecânica Jardim Hilário">
+  <meta property="og:locale" content="pt_BR">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="🚗 VISION CAR - MECÂNICA NO JARDIM HILÁRIO | RUA MARIO PRETO, 55">
+  <meta name="twitter:description" content="🏠 RUA MARIO PRETO, 55 - JARDIM HILÁRIO 📍 FÁCIL DE ENCONTRAR: SEGUNDA RUA DEPOIS DO MERCADO REAL (SUBINDO)">
+  <meta name="twitter:image" content="https://viniciusxtrad.github.io/vision-car/bannergoogle.jpg">
+  <meta name="twitter:image:alt" content="Vision Car - Mecânica no Jardim Hilário, Terra Boa - PR">
+  <meta name="twitter:site" content="@visioncar">
+  <meta name="twitter:creator" content="@visioncar">
+  
+  <meta name="description" content="📍 Vision Car - Mecânica no Jardim Hilário, Rua Mario Preto, 55 - Terra Boa - PR. A mais nova mecânica da região com o melhor preço! Buscamos seu carro sem cobrar guincho, garantia de 3 meses.">
+  <link rel="canonical" href="https://viniciusxtrad.github.io/vision-car">
+  
+  <style>
+    :root {
+      --primary-blue: #0055ff;
+      --dark-blue: #0033aa;
+      --bg-black: #0f0f0f;
+      --card-bg: #1a1a1a;
+      --accent-silver: #c0c0c0;
+      --text-gray: #d1d1d1;
+      --warning-yellow: #ffcc00;
+      --highlight-green: #00ff88;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Montserrat', 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-black);
+      color: #fff;
+      overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+      background: var(--bg-black);
+      border-left: 1px solid #333;
+      border-right: 1px solid #333;
+    }
+
+    /* ======================================
+       BLOCO DE DESTAQUE PRINCIPAL (NOVO)
+    ====================================== */
+    .destaque-topo {
+      background: linear-gradient(135deg, #0033cc 0%, #0055ff 50%, #003bb5 100%);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .destaque-topo::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255,255,255,0.03) 10px,
+        rgba(255,255,255,0.03) 20px
+      );
+      pointer-events: none;
+    }
+
+    .destaque-titulo-bloco {
+      background: #fff;
+      color: #000;
+      text-align: center;
+      padding: 10px 15px;
+      font-size: 0.7em;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .destaque-titulo-bloco span {
+      color: var(--primary-blue);
+    }
+
+    .destaque-conteudo {
+      padding: 20px 20px 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .destaque-linha-titulo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .destaque-icone-carro {
+      font-size: 2em;
+      flex-shrink: 0;
+      filter: drop-shadow(0 0 8px rgba(255,255,255,0.4));
+    }
+
+    .destaque-texto-titulo {
+      font-size: 1.15em;
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 1.2;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+      letter-spacing: 0.5px;
+    }
+
+    .destaque-texto-titulo strong {
+      color: #ffdd00;
+      display: block;
+      font-size: 1.1em;
+    }
+
+    .destaque-separador {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      margin: 14px 0;
+    }
+
+    .destaque-linha-endereco {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 10px;
+      padding: 12px 15px;
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(4px);
+    }
+
+    .destaque-pin {
+      font-size: 1.4em;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .destaque-endereco-texto {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .destaque-rua {
+      font-size: 1em;
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .destaque-como-chegar {
+      font-size: 0.82em;
+      color: #cce0ff;
+      line-height: 1.3;
+      font-weight: 600;
+    }
+
+    .destaque-como-chegar strong {
+      color: #ffdd00;
+    }
+
+    .destaque-pulsante {
+      display: inline-block;
+      background: #ffdd00;
+      color: #000;
+      font-weight: 900;
+      font-size: 0.75em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-top: 10px;
+      letter-spacing: 1px;
+      animation: pulseYellow 2s ease-in-out infinite;
+    }
+
+    @keyframes pulseYellow {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,221,0,0.5); }
+      50% { transform: scale(1.04); box-shadow: 0 0 0 6px rgba(255,221,0,0); }
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 4px solid var(--primary-blue);
+    }
+
+    .logo-container { margin-bottom: 12px; }
+
+    .logo-main {
+      font-size: 2em;
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      text-shadow: 2px 2px 0px var(--primary-blue);
+    }
+
+    .logo-sub {
+      color: var(--primary-blue);
+      font-size: 1.5em;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-top: -5px;
+    }
+
+    .local-badge {
+      background: var(--primary-blue);
+      display: inline-block;
+      padding: 8px 15px;
+      border-radius: 8px;
+      margin-top: 12px;
+      font-size: 0.9em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .address-highlight {
+      background: rgba(0, 85, 255, 0.2);
+      border: 1px solid var(--primary-blue);
+      display: block;
+      padding: 8px 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+      font-size: 0.85em;
+      font-weight: 600;
+      color: #88bbff;
+    }
+
+    .urgency-bar {
+      background: #fff;
+      color: #000;
+      text-align: center;
+      padding: 10px 5px;
+      font-weight: 900;
+      font-size: 0.85em;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 2px solid #333;
+      max-height: 250px;
+      object-fit: cover;
+    }
+
+    .container {
+      padding: 30px 15px;
+      background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+    }
+
+    h1 {
+      font-size: 1.8em;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    h1 span { color: var(--primary-blue); }
+
+    .subtitle {
+      font-size: 1em;
+      color: var(--text-gray);
+      text-align: center;
+      margin-bottom: 30px;
+      line-height: 1.5;
+      padding: 0 5px;
+    }
+
+    .services { display: grid; gap: 20px; }
+
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid #333;
+      border-left: 5px solid var(--primary-blue);
+      padding: 20px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      background: #222;
+      transform: translateY(-3px);
+    }
+
+    .service-title {
+      font-size: 1.2em;
+      color: #fff;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .price-box {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .old-price {
+      color: #666;
+      text-decoration: line-through;
+      font-size: 0.85em;
+    }
+
+    .new-price {
+      color: var(--primary-blue);
+      font-size: 1.5em;
+      font-weight: 900;
+    }
+
+    .price-note { font-size: 0.75em; color: #999; font-style: italic; }
+
+    .service-details {
+      color: var(--text-gray);
+      font-size: 0.9em;
+      list-style: none;
+      margin-bottom: 15px;
+    }
+
+    .service-details li { margin-bottom: 5px; line-height: 1.4; }
+
+    .service-details li::before {
+      content: "✓ ";
+      color: var(--primary-blue);
+      font-weight: bold;
+    }
+
+    .legal-notice {
+      background: rgba(0, 85, 255, 0.1);
+      border: 1px solid var(--primary-blue);
+      border-radius: 5px;
+      padding: 10px 12px;
+      margin-top: 15px;
+      font-size: 0.8em;
+      color: #88bbff;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .legal-notice strong { color: #fff; }
+
+    .special-offer-card {
+      background: linear-gradient(135deg, var(--card-bg) 0%, #222 100%);
+      border: 2px solid var(--primary-blue);
+      border-left: 8px solid var(--primary-blue);
+      text-align: center;
+    }
+
+    .offer-title {
+      font-size: 1.5em;
+      color: #fff;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .benefits-list { display: grid; gap: 12px; margin: 20px 0; }
+
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95em;
+      font-weight: 700;
+      color: #fff;
+      text-align: left;
+      padding: 0 5px;
+    }
+
+    .benefit-icon {
+      color: var(--primary-blue);
+      font-size: 1.1em;
+      min-width: 25px;
+      flex-shrink: 0;
+    }
+
+    .highlight-badge {
+      background: var(--primary-blue);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 900;
+      display: inline-block;
+      margin: 8px 0;
+      font-size: 0.85em;
+    }
+
+    .cta-container { margin-top: 40px; text-align: center; }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: #fff;
+      padding: 16px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 900;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto 12px;
+      box-shadow: 0 6px 15px rgba(37, 211, 102, 0.2);
+      transition: 0.3s;
+      font-size: 1em;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      touch-action: manipulation;
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.2;
+    }
+
+    .btn-phone {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+      padding: 14px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      transition: 0.3s;
+      font-size: 0.95em;
+      text-align: center;
+      cursor: pointer;
+      touch-action: manipulation;
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.2;
+    }
+
+    .btn-whatsapp:hover, .btn-whatsapp:active { transform: scale(1.02); background: #1da851; }
+    .btn-phone:hover, .btn-phone:active { background: rgba(255,255,255,0.1); }
+
+    @media (hover: none) {
+      .btn-whatsapp:active { transform: scale(0.98); }
+      .btn-phone:active { transform: scale(0.98); }
+    }
+
+    .footer {
+      background: #000;
+      padding: 30px 15px;
+      text-align: center;
+      font-size: 0.75em;
+      color: #666;
+      border-top: 1px solid #333;
+    }
+
+    .footer strong { color: #999; }
+
+    .disclaimer-global {
+      background: rgba(0, 85, 255, 0.1);
+      border: 1px solid var(--primary-blue);
+      border-radius: 8px;
+      padding: 15px;
+      margin: 25px 0;
+      text-align: center;
+    }
+
+    .disclaimer-global h3 { color: var(--primary-blue); margin-bottom: 8px; font-size: 1em; }
+    .disclaimer-global p { font-size: 0.85em; margin-bottom: 8px; line-height: 1.4; }
+
+    /* Responsivo */
+    @media (max-width: 360px) {
+      .header { padding: 20px 15px; }
+      .logo-main { font-size: 1.7em; }
+      .logo-sub { font-size: 1.3em; }
+      h1 { font-size: 1.6em; }
+      .btn-whatsapp, .btn-phone { max-width: 280px; padding: 14px 16px; font-size: 0.95em; min-height: 48px; }
+      .destaque-texto-titulo { font-size: 1em; }
+    }
+
+    @media (min-width: 360px) and (max-width: 400px) {
+      .btn-whatsapp, .btn-phone { max-width: 300px; padding: 15px 18px; }
+      .hero-image { max-height: 200px; }
+    }
+
+    @media (min-width: 401px) and (max-width: 600px) {
+      .container { padding: 35px 20px; }
+      .btn-whatsapp, .btn-phone { max-width: 340px; padding: 17px 22px; }
+      .hero-image { max-height: 220px; }
+    }
+
+    @media (min-width: 601px) {
+      .container { padding: 40px 25px; }
+      .btn-whatsapp, .btn-phone { max-width: 360px; padding: 18px 25px; font-size: 1.05em; min-height: 56px; }
+      .hero-image { max-height: 250px; }
+      h1 { font-size: 2em; }
+      .subtitle { font-size: 1.1em; }
+      .destaque-texto-titulo { font-size: 1.25em; }
+    }
+
+    @supports (-webkit-touch-callout: none) {
+      .btn-whatsapp, .btn-phone { font-size: 16px; }
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 14px; }
+      .service-title { font-size: 1.1em; }
+      .new-price { font-size: 1.4em; }
+      .benefit-item { font-size: 0.9em; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <!-- ========================================
+         BLOCO DE DESTAQUE - TÍTULO + ENDEREÇO
+    ======================================== -->
+    <div class="destaque-topo">
+      <div class="destaque-titulo-bloco">
+        ✅ MECÂNICA <span>NOVA</span> NO SEU BAIRRO ✅
+      </div>
+      <div class="destaque-conteudo">
+        <div class="destaque-linha-titulo">
+          <span class="destaque-icone-carro">🚗</span>
+          <div class="destaque-texto-titulo">
+            VISION CAR
+            <strong>MECÂNICA NO JARDIM HILÁRIO</strong>
+            RUA MARIO PRETO, 55
+          </div>
+        </div>
+        <div class="destaque-separador"></div>
+        <div class="destaque-linha-endereco">
+          <span class="destaque-pin">📍</span>
+          <div class="destaque-endereco-texto">
+            <span class="destaque-rua">🏠 Rua Mario Preto, 55 — Jardim Hilário</span>
+            <span class="destaque-como-chegar">
+              <strong>FÁCIL DE ENCONTRAR:</strong> Segunda rua depois do Mercado Real (subindo)
+            </span>
+          </div>
+        </div>
+        <div>
+          <span class="destaque-pulsante">🚗 RETIRADA GRÁTIS NO SEU BAIRRO!</span>
+        </div>
+      </div>
+    </div>
+    <!-- FIM BLOCO DE DESTAQUE -->
+
+    <div class="header">
+      <div class="logo-container">
+        <div class="logo-main">VISION</div>
+        <div class="logo-sub">CAR</div>
+      </div>
+      <div class="local-badge">
+        📍 JARDIM HILÁRIO - TERRA BOA - PR
+      </div>
+      <div class="address-highlight">
+        🏠 Rua Mario Preto, 55 - Hilario 📍 FÁCIL DE ENCONTRAR: Segunda rua depois do Mercado Real (subindo)
+      </div>
+    </div>
+
+    <div class="urgency-bar">
+      ⚡ ATENDIMENTO RÁPIDO: (44) 9702-2672 | 🚗 BUSCAMOS SEU CARRO SEM CUSTO!
+    </div>
+
+    <img src="https://viniciusxtrad.github.io/vision-car/bannergoogle.jpg" alt="Vision Car - Mecânica no Jardim Hilário, Terra Boa - PR" class="hero-image">
+
+    <div class="container">
+      <h1>🚗 MECÂNICA NO <span>JARDIM HILÁRIO</span></h1>
+      <p class="subtitle">📍 <strong>RUA MARIO PRETO, 55 - TERRA BOA - PR</strong> 📍<br>🏆 <strong>MELHOR PREÇO DA REGIÃO</strong> 🏆 ✅ <strong>RETIRADA E ENTREGA GRÁTIS</strong> ✅</p>
+
+      <div class="disclaimer-global">
+        <h3>📍 ATENÇÃO MORADORES DO JARDIM HILÁRIO E REGIÃO!</h3>
+        <p>A <strong>Vision Car</strong> está localizada <strong>Rua Mario Preto, 55 - Jardim Hilário</strong> - bem pertinho de você! 🚗</p>
+        <p>✅ <strong>Retirada e entrega GRÁTIS</strong> para todo o bairro Hilário e região central de Terra Boa!</p>
+        <p>✅ <strong>Melhor preço da região</strong> com 3 meses de garantia em todos os serviços!</p>
+      </div>
+
+      <div class="services">
+        <div class="service-card special-offer-card">
+          <div class="offer-title">
+            🎯 PORQUE ESCOLHER A VISION CAR?
+          </div>
+          
+          <div class="highlight-badge">🔥 NOVIDADE NO JARDIM HILÁRIO! MELHOR PREÇO GARANTIDO 🔥</div>
+          
+          <div class="benefits-list">
+            <div class="benefit-item">
+              <span class="benefit-icon">📍</span>
+              <div><strong>LOCALIZAÇÃO PRIVILEGIADA:</strong> Rua Mario Preto, 55 - Jardim Hilário. Estamos bem pertinho de você!</div>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-icon">🚗</span>
+              <div><strong>RETIRAMOS SEU CARRO GRÁTIS:</strong> Buscamos no Jardim Hilário e em toda Terra Boa sem custo extra!</div>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-icon">💰</span>
+              <div><strong>MELHOR PREÇO DA REGIÃO:</strong> Chegamos para revolucionar! Preço imbatível com qualidade de primeira.</div>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-icon">✅</span>
+              <div><strong>3 MESES DE GARANTIA:</strong> Trabalhamos com confiança. Mais de 90 dias de tranquilidade em todos os serviços.</div>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-icon">👨‍🔧</span>
+              <div><strong>MÃO DE OBRA ESPECIALIZADA:</strong> Técnicos certificados com anos de experiência. Seu carro em boas mãos!</div>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-icon">⏰</span>
+              <div><strong>AGILIDADE NO ATENDIMENTO:</strong> Diagnóstico rápido e serviço sem enrolação. Respeitamos seu tempo.</div>
+            </div>
+          </div>
+          
+          <div class="price-box" style="justify-content: center; margin-top: 15px;">
+            <span class="new-price">🚨 LANÇAMENTO: ECONOMIZE ATÉ 40%</span>
+          </div>
+          
+          <div class="legal-notice">
+            <strong>⚠️ IMPORTANTE:</strong> A economia de 40% é comparativa com preços de mercado da região e pode variar conforme o modelo do veículo e complexidade do serviço.
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-title">Troca de Óleo e Filtros</div>
+          <div class="price-box">
+            <span class="old-price">De R$ 320</span>
+            <span class="new-price">R$ 239</span>
+            <span class="price-note">(a partir de)</span>
+          </div>
+          <ul class="service-details">
+            <li>Óleo sintético de alta performance</li>
+            <li>Filtro de óleo original</li>
+            <li>Check-up de níveis de fluídos</li>
+            <li><strong>✅ 3 MESES DE GARANTIA</strong></li>
+            <li><strong>🚗 RETIRADA GRÁTIS DO SEU CARRO</strong></li>
+          </ul>
+          <div class="legal-notice">
+            <strong>⚠️ VERIFIQUE A ELEGIBILIDADE:</strong> Preço válido para veículos populares 1.0 a 2.0. Para motores maiores ou especiais, consulte-nos para orçamento personalizado.
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-title">Sistema de Freios</div>
+          <div class="price-box">
+            <span class="new-price">A partir de R$ 180</span>
+          </div>
+          <ul class="service-details">
+            <li>Troca de pastilhas (dianteiras ou traseiras)</li>
+            <li>Retífica de discos (quando possível)</li>
+            <li>Sangria de sistema</li>
+            <li>Verificação do fluído de freio</li>
+            <li><strong>✅ 3 MESES DE GARANTIA</strong></li>
+            <li><strong>🚗 RETIRADA GRÁTIS DO SEU CARRO</strong></li>
+          </ul>
+          <div class="legal-notice">
+            <strong>⚠️ CONDIÇÕES DO SERVIÇO:</strong> Preço para pastilhas dianteiras de veículos populares. Discos, tambores e componentes adicionais terão custo extra. Solicite avaliação.
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-title">Substituição do Kit de Sincronismo</div>
+          <div class="price-box">
+            <span class="old-price">De R$ 450</span>
+            <span class="new-price">A partir de R$ 300</span>
+          </div>
+          <ul class="service-details">
+            <li>Substituição de Correia e Tensionadores (Kit Completo)</li>
+            <li>Descontaminação Técnica dos Suportes e Polias</li>
+            <li>Alinhamento de Ponto Motor com Ferramental de Precisão</li>
+            <li>Inspeção de Retentores e Vedação do Sistema</li>
+            <li><strong>✅ 3 MESES DE GARANTIA</strong></li>
+            <li><strong>🚗 RETIRADA GRÁTIS DO SEU CARRO</strong></li>
+          </ul>
+          <div class="legal-notice">
+            <strong>⚠️ MODELOS ESPECÍFICOS:</strong> Preço válido para veículos com motor transversal 4 cilindros. Para motores V6, V8, diesel ou com configurações especiais, solicite orçamento.
+          </div>
+        </div>
+      </div>
+
+      <div class="disclaimer-global">
+        <h3>📋 POR QUE ESCOLHER A VISION CAR?</h3>
+        <p>📍 <strong>Endereço fácil de encontrar:</strong> Rua Mario Preto, 55 - Jardim Hilário, Terra Boa - PR</p>
+        <p>🚗 <strong>Retirada e entrega GRÁTIS</strong> para todo o bairro Hilário e região central!</p>
+        <p>💰 <strong>Melhor preço da região</strong> com garantia de 3 meses em todos os serviços!</p>
+        <p>🏠 <strong>Pertinho de você!</strong> Não precisa levar o carro longe - estamos no seu bairro!</p>
+      </div>
+
+      <div class="cta-container">
+        <a href="https://wa.me/554497022672?text=Olá!%20Vi%20que%20a%20Vision%20Car%20é%20a%20mecânica%20do%20Jardim%20Hilário%20na%20Rua%20Mario%20Preto,%2055!%20Quero%20saber%20mais%20sobre%20os%20serviços%20e%20a%20garantia%20de%203%20meses.%20Meu%20veículo%20é:" class="btn-whatsapp">
+          📱 CONSULTAR ELEGIBILIDADE NO WHATSAPP
+        </a>
+        <a href="tel:+554497022672" class="btn-phone">
+          📞 LIGAR PARA VERIFICAR MEU VEÍCULO
+        </a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p><strong>VISION CAR</strong></p>
+      <p>📍 Rua Mario Preto, 55 - Jardim Hilário - Terra Boa - PR</p>
+      <p>📞 (44) 9702-2672</p>
+      <p>Segunda a Sexta: 08:00 às 18:00 | Sábado: 08:00 às 12:00</p>
+      <p style="margin-top: 15px;"><strong>⚠️ ATENÇÃO MORADORES DO JARDIM HILÁRIO:</strong> Estamos no seu bairro! Retirada e entrega GRÁTIS para toda a região! 🚗</p>
+      <p style="margin-top: 8px;">© 2026 Vision Car. Todos os direitos reservados.</p>
+    </div>
+  </div>
+
+</body>
+</html>
