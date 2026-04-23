@@ -65,7 +65,7 @@
     }
 
     /* ======================================
-       BLOCO DE DESTAQUE PRINCIPAL (NOVO)
+       BLOCO DE DESTAQUE PRINCIPAL
     ====================================== */
     .destaque-topo {
       background: linear-gradient(135deg, #0033cc 0%, #0055ff 50%, #003bb5 100%);
@@ -214,6 +214,21 @@
       padding: 30px 20px;
       text-align: center;
       border-bottom: 4px solid var(--primary-blue);
+    }
+
+    /* ======================================
+       LOGO IMAGE - somente visual, fora das meta tags OG
+    ====================================== */
+    .logo-img-container {
+      margin-bottom: 16px;
+    }
+
+    .logo-img {
+      width: 160px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 0 12px rgba(0, 85, 255, 0.5));
     }
 
     .logo-container { margin-bottom: 12px; }
@@ -514,6 +529,7 @@
       h1 { font-size: 1.6em; }
       .btn-whatsapp, .btn-phone { max-width: 280px; padding: 14px 16px; font-size: 0.95em; min-height: 48px; }
       .destaque-texto-titulo { font-size: 1em; }
+      .logo-img { width: 130px; }
     }
 
     @media (min-width: 360px) and (max-width: 400px) {
@@ -534,6 +550,7 @@
       h1 { font-size: 2em; }
       .subtitle { font-size: 1.1em; }
       .destaque-texto-titulo { font-size: 1.25em; }
+      .logo-img { width: 180px; }
     }
 
     @supports (-webkit-touch-callout: none) {
@@ -552,9 +569,7 @@
 
   <div class="wrapper">
 
-    <!-- ========================================
-         BLOCO DE DESTAQUE - TÍTULO + ENDEREÇO
-    ======================================== -->
+    <!-- BLOCO DE DESTAQUE - TÍTULO + ENDEREÇO -->
     <div class="destaque-topo">
       <div class="destaque-titulo-bloco">
         ✅ MECÂNICA <span>NOVA</span> NO SEU BAIRRO ✅
@@ -583,9 +598,18 @@
         </div>
       </div>
     </div>
-    <!-- FIM BLOCO DE DESTAQUE -->
 
     <div class="header">
+      <!-- Logo visual: carregada apenas no HTML, não referenciada nas meta tags OG/Twitter -->
+      <div class="logo-img-container">
+        <img
+          src="https://viniciusxtrad.github.io/mecanica-vision-car/logopng.png"
+          alt="Vision Car - Logo"
+          class="logo-img"
+          loading="eager"
+        />
+      </div>
+
       <div class="logo-container">
         <div class="logo-main">VISION</div>
         <div class="logo-sub">CAR</div>
