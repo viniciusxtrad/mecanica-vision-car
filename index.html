@@ -208,56 +208,6 @@
       50% { transform: scale(1.04); box-shadow: 0 0 0 6px rgba(255,221,0,0); }
     }
 
-    /* Header */
-    .header {
-      background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
-      padding: 30px 20px;
-      text-align: center;
-      border-bottom: 4px solid var(--primary-blue);
-    }
-
-    .logo-container { margin-bottom: 12px; }
-
-    .logo-main {
-      font-size: 2em;
-      font-weight: 900;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: -1px;
-      text-shadow: 2px 2px 0px var(--primary-blue);
-    }
-
-    .logo-sub {
-      color: var(--primary-blue);
-      font-size: 1.5em;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-top: -5px;
-    }
-
-    .local-badge {
-      background: var(--primary-blue);
-      display: inline-block;
-      padding: 8px 15px;
-      border-radius: 8px;
-      margin-top: 12px;
-      font-size: 0.9em;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    .address-highlight {
-      background: rgba(0, 85, 255, 0.2);
-      border: 1px solid var(--primary-blue);
-      display: block;
-      padding: 8px 15px;
-      border-radius: 8px;
-      margin-top: 10px;
-      font-size: 0.85em;
-      font-weight: 600;
-      color: #88bbff;
-    }
-
     .urgency-bar {
       background: #fff;
       color: #000;
@@ -304,86 +254,14 @@
       padding: 0 5px;
     }
 
-    .services { display: grid; gap: 20px; }
-
-    .service-card {
-      background: var(--card-bg);
-      border: 1px solid #333;
-      border-left: 5px solid var(--primary-blue);
-      padding: 20px;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-
-    .service-card:hover {
-      background: #222;
-      transform: translateY(-3px);
-    }
-
-    .service-title {
-      font-size: 1.2em;
-      color: #fff;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .price-box {
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
-    .old-price {
-      color: #666;
-      text-decoration: line-through;
-      font-size: 0.85em;
-    }
-
-    .new-price {
-      color: var(--primary-blue);
-      font-size: 1.5em;
-      font-weight: 900;
-    }
-
-    .price-note { font-size: 0.75em; color: #999; font-style: italic; }
-
-    .service-details {
-      color: var(--text-gray);
-      font-size: 0.9em;
-      list-style: none;
-      margin-bottom: 15px;
-    }
-
-    .service-details li { margin-bottom: 5px; line-height: 1.4; }
-
-    .service-details li::before {
-      content: "✓ ";
-      color: var(--primary-blue);
-      font-weight: bold;
-    }
-
-    .legal-notice {
-      background: rgba(0, 85, 255, 0.1);
-      border: 1px solid var(--primary-blue);
-      border-radius: 5px;
-      padding: 10px 12px;
-      margin-top: 15px;
-      font-size: 0.8em;
-      color: #88bbff;
-      text-align: center;
-      line-height: 1.3;
-    }
-
-    .legal-notice strong { color: #fff; }
-
     .special-offer-card {
       background: linear-gradient(135deg, var(--card-bg) 0%, #222 100%);
       border: 2px solid var(--primary-blue);
       border-left: 8px solid var(--primary-blue);
       text-align: center;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
     }
 
     .offer-title {
@@ -395,7 +273,12 @@
       line-height: 1.2;
     }
 
-    .benefits-list { display: grid; gap: 12px; margin: 20px 0; }
+    .benefits-list {
+      display: grid;
+      gap: 12px;
+      margin: 20px 0;
+      text-align: left;
+    }
 
     .benefit-item {
       display: flex;
@@ -404,7 +287,6 @@
       font-size: 0.95em;
       font-weight: 700;
       color: #fff;
-      text-align: left;
       padding: 0 5px;
     }
 
@@ -426,7 +308,88 @@
       font-size: 0.85em;
     }
 
-    .cta-container { margin-top: 40px; text-align: center; }
+    .legal-notice {
+      background: rgba(0, 85, 255, 0.1);
+      border: 1px solid var(--primary-blue);
+      border-radius: 5px;
+      padding: 10px 12px;
+      margin-top: 15px;
+      font-size: 0.8em;
+      color: #88bbff;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .legal-notice strong { color: #fff; }
+
+    /* ESTILOS DOS DEPOIMENTOS */
+    .testimonials-section {
+      margin: 50px 0 30px;
+    }
+
+    .testimonials-title {
+      text-align: center;
+      font-size: 1.6em;
+      font-weight: 900;
+      margin-bottom: 25px;
+      color: #fff;
+    }
+
+    .testimonials-title span {
+      color: var(--primary-blue);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .testimonial-card {
+      background: var(--card-bg);
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 20px;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      font-size: 3.5em;
+      color: var(--primary-blue);
+      opacity: 0.2;
+      font-family: serif;
+      pointer-events: none;
+    }
+
+    .testimonial-text {
+      font-size: 0.95em;
+      line-height: 1.5;
+      color: var(--text-gray);
+      margin-bottom: 15px;
+      font-style: italic;
+      padding-left: 20px;
+    }
+
+    .testimonial-author {
+      font-weight: 800;
+      color: var(--primary-blue);
+      text-align: right;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
+    }
+
+    .testimonial-author::before {
+      content: "— ";
+    }
+
+    .cta-container {
+      margin-top: 40px;
+      text-align: center;
+    }
 
     .btn-whatsapp {
       background: #25d366;
@@ -508,12 +471,13 @@
 
     /* Responsivo */
     @media (max-width: 360px) {
-      .header { padding: 20px 15px; }
-      .logo-main { font-size: 1.7em; }
-      .logo-sub { font-size: 1.3em; }
       h1 { font-size: 1.6em; }
       .btn-whatsapp, .btn-phone { max-width: 280px; padding: 14px 16px; font-size: 0.95em; min-height: 48px; }
       .destaque-texto-titulo { font-size: 1em; }
+      .testimonials-title { font-size: 1.3em; }
+      .testimonial-text { font-size: 0.85em; }
+      .offer-title { font-size: 1.2em; }
+      .benefit-item { font-size: 0.85em; }
     }
 
     @media (min-width: 360px) and (max-width: 400px) {
@@ -534,6 +498,8 @@
       h1 { font-size: 2em; }
       .subtitle { font-size: 1.1em; }
       .destaque-texto-titulo { font-size: 1.25em; }
+      .testimonials-title { font-size: 1.8em; }
+      .offer-title { font-size: 1.6em; }
     }
 
     @supports (-webkit-touch-callout: none) {
@@ -542,9 +508,6 @@
 
     @media (max-width: 480px) {
       body { font-size: 14px; }
-      .service-title { font-size: 1.1em; }
-      .new-price { font-size: 1.4em; }
-      .benefit-item { font-size: 0.9em; }
     }
   </style>
 </head>
@@ -552,7 +515,7 @@
 
   <div class="wrapper">
 
-    <!-- BLOCO DE DESTAQUE - TÍTULO + ENDEREÇO -->
+    <!-- BLOCO DE DESTAQUE - TÍTULO + ENDEREÇO (MANTIDO) -->
     <div class="destaque-topo">
       <div class="destaque-titulo-bloco">
         ✅ MECÂNICA <span>NOVA</span> NO SEU BAIRRO ✅
@@ -582,19 +545,6 @@
       </div>
     </div>
 
-    <div class="header">
-      <div class="logo-container">
-        <div class="logo-main">VISION</div>
-        <div class="logo-sub">CAR</div>
-      </div>
-      <div class="local-badge">
-        📍 JARDIM HILÁRIO - TERRA BOA - PR
-      </div>
-      <div class="address-highlight">
-        🏠 Rua Mario Preto, 55 - Hilario 📍 FÁCIL DE ENCONTRAR: Segunda rua depois do Mercado Real (subindo)
-      </div>
-    </div>
-
     <div class="urgency-bar">
       ⚡ ATENDIMENTO RÁPIDO: (44) 9702-2672 | 🚗 BUSCAMOS SEU CARRO SEM CUSTO!
     </div>
@@ -616,103 +566,85 @@
         <p>✅ <strong>Melhor preço da região</strong> com 3 meses de garantia em todos os serviços!</p>
       </div>
 
-      <div class="services">
-        <div class="service-card special-offer-card">
-          <div class="offer-title">
-            🎯 PORQUE ESCOLHER A VISION CAR?
+      <!-- CARD "PORQUE ESCOLHER A VISION CAR?" (MANTIDO) -->
+      <div class="special-offer-card">
+        <div class="offer-title">
+          🎯 PORQUE ESCOLHER A VISION CAR?
+        </div>
+        
+        <div class="highlight-badge">🔥 NOVIDADE NO JARDIM HILÁRIO! MELHOR PREÇO GARANTIDO 🔥</div>
+        
+        <div class="benefits-list">
+          <div class="benefit-item">
+            <span class="benefit-icon">📍</span>
+            <div><strong>LOCALIZAÇÃO PRIVILEGIADA:</strong> Rua Mario Preto, 55 - Jardim Hilário. Estamos bem pertinho de você!</div>
           </div>
-          
-          <div class="highlight-badge">🔥 NOVIDADE NO JARDIM HILÁRIO! MELHOR PREÇO GARANTIDO 🔥</div>
-          
-          <div class="benefits-list">
-            <div class="benefit-item">
-              <span class="benefit-icon">📍</span>
-              <div><strong>LOCALIZAÇÃO PRIVILEGIADA:</strong> Rua Mario Preto, 55 - Jardim Hilário. Estamos bem pertinho de você!</div>
-            </div>
-            <div class="benefit-item">
-              <span class="benefit-icon">🚗</span>
-              <div><strong>RETIRAMOS SEU CARRO GRÁTIS:</strong> Buscamos no Jardim Hilário e em toda Terra Boa sem custo extra!</div>
-            </div>
-            <div class="benefit-item">
-              <span class="benefit-icon">💰</span>
-              <div><strong>MELHOR PREÇO DA REGIÃO:</strong> Chegamos para revolucionar! Preço imbatível com qualidade de primeira.</div>
-            </div>
-            <div class="benefit-item">
-              <span class="benefit-icon">✅</span>
-              <div><strong>3 MESES DE GARANTIA:</strong> Trabalhamos com confiança. Mais de 90 dias de tranquilidade em todos os serviços.</div>
-            </div>
-            <div class="benefit-item">
-              <span class="benefit-icon">👨‍🔧</span>
-              <div><strong>MÃO DE OBRA ESPECIALIZADA:</strong> Técnicos certificados com anos de experiência. Seu carro em boas mãos!</div>
-            </div>
-            <div class="benefit-item">
-              <span class="benefit-icon">⏰</span>
-              <div><strong>AGILIDADE NO ATENDIMENTO:</strong> Diagnóstico rápido e serviço sem enrolação. Respeitamos seu tempo.</div>
-            </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">🚗</span>
+            <div><strong>RETIRAMOS SEU CARRO GRÁTIS:</strong> Buscamos no Jardim Hilário e em toda Terra Boa sem custo extra!</div>
           </div>
-          
-          <div class="price-box" style="justify-content: center; margin-top: 15px;">
-            <span class="new-price">🚨 LANÇAMENTO: ECONOMIZE ATÉ 40%</span>
+          <div class="benefit-item">
+            <span class="benefit-icon">💰</span>
+            <div><strong>MELHOR PREÇO DA REGIÃO:</strong> Chegamos para revolucionar! Preço imbatível com qualidade de primeira.</div>
           </div>
-          
-          <div class="legal-notice">
-            <strong>⚠️ IMPORTANTE:</strong> A economia de 40% é comparativa com preços de mercado da região e pode variar conforme o modelo do veículo e complexidade do serviço.
+          <div class="benefit-item">
+            <span class="benefit-icon">✅</span>
+            <div><strong>3 MESES DE GARANTIA:</strong> Trabalhamos com confiança. Mais de 90 dias de tranquilidade em todos os serviços.</div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">👨‍🔧</span>
+            <div><strong>MÃO DE OBRA ESPECIALIZADA:</strong> Técnicos certificados com anos de experiência. Seu carro em boas mãos!</div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">⏰</span>
+            <div><strong>AGILIDADE NO ATENDIMENTO:</strong> Diagnóstico rápido e serviço sem enrolação. Respeitamos seu tempo.</div>
           </div>
         </div>
-
-        <div class="service-card">
-          <div class="service-title">Troca de Óleo e Filtros</div>
-          <div class="price-box">
-            <span class="old-price">De R$ 320</span>
-            <span class="new-price">R$ 239</span>
-            <span class="price-note">(a partir de)</span>
-          </div>
-          <ul class="service-details">
-            <li>Óleo sintético de alta performance</li>
-            <li>Filtro de óleo original</li>
-            <li>Check-up de níveis de fluídos</li>
-            <li><strong>✅ 3 MESES DE GARANTIA</strong></li>
-            <li><strong>🚗 RETIRADA GRÁTIS DO SEU CARRO</strong></li>
-          </ul>
-          <div class="legal-notice">
-            <strong>⚠️ VERIFIQUE A ELEGIBILIDADE:</strong> Preço válido para veículos populares 1.0 a 2.0. Para motores maiores ou especiais, consulte-nos para orçamento personalizado.
-          </div>
+        
+        <div class="legal-notice">
+          <strong>⚠️ IMPORTANTE:</strong> A economia de 40% é comparativa com preços de mercado da região e pode variar conforme o modelo do veículo e complexidade do serviço.
         </div>
+      </div>
 
-        <div class="service-card">
-          <div class="service-title">Sistema de Freios</div>
-          <div class="price-box">
-            <span class="new-price">A partir de R$ 180</span>
-          </div>
-          <ul class="service-details">
-            <li>Troca de pastilhas (dianteiras ou traseiras)</li>
-            <li>Retífica de discos (quando possível)</li>
-            <li>Sangria de sistema</li>
-            <li>Verificação do fluído de freio</li>
-            <li><strong>✅ 3 MESES DE GARANTIA</strong></li>
-            <li><strong>🚗 RETIRADA GRÁTIS DO SEU CARRO</strong></li>
-          </ul>
-          <div class="legal-notice">
-            <strong>⚠️ CONDIÇÕES DO SERVIÇO:</strong> Preço para pastilhas dianteiras de veículos populares. Discos, tambores e componentes adicionais terão custo extra. Solicite avaliação.
-          </div>
+      <!-- SEÇÃO DE DEPOIMENTOS -->
+      <div class="testimonials-section">
+        <div class="testimonials-title">
+          💬 QUEM JÁ CONFIOU <span>RECOMENDA</span>
         </div>
-
-        <div class="service-card">
-          <div class="service-title">Substituição do Kit de Sincronismo</div>
-          <div class="price-box">
-            <span class="old-price">De R$ 450</span>
-            <span class="new-price">A partir de R$ 300</span>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              "Levei meu Kadet 96 que tava manco, sem força pra subir ladeira. O piazão da Vision Car arrumou o motor, ficou um veneno! Agora ele canta nas retas. Valeu cada centavo, serviço de primeira!"
+            </div>
+            <div class="testimonial-author">Aline da Silva</div>
           </div>
-          <ul class="service-details">
-            <li>Substituição de Correia e Tensionadores (Kit Completo)</li>
-            <li>Descontaminação Técnica dos Suportes e Polias</li>
-            <li>Alinhamento de Ponto Motor com Ferramental de Precisão</li>
-            <li>Inspeção de Retentores e Vedação do Sistema</li>
-            <li><strong>✅ 3 MESES DE GARANTIA</strong></li>
-            <li><strong>🚗 RETIRADA GRÁTIS DO SEU CARRO</strong></li>
-          </ul>
-          <div class="legal-notice">
-            <strong>⚠️ MODELOS ESPECÍFICOS:</strong> Preço válido para veículos com motor transversal 4 cilindros. Para motores V6, V8, diesel ou com configurações especiais, solicite orçamento.
+
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              "Sou caminhoneiro e tava com meu S10 dando uns tranco no motor. Levei lá na Vision, diagnosticaram rapidinho, trocaram bico e bomba. Ficou zero de novo. E ainda me buscaram em casa, nem precisei me preocupar. Recomendo demais!"
+            </div>
+            <div class="testimonial-author">Abener de Souza</div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              "Meu Onix tava com barulho na correia, achei que ia gastar uma fortuna. Levei na Vision Car, resolveram na hora, preço justo e ainda deram garantia de 3 meses. Ganharam uma cliente pra vida toda."
+            </div>
+            <div class="testimonial-author">Camila Soares</div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              "Meu esposo levou o Gol pra revisão e ficou impressionado com o atendimento. Explicaram tudo certinho, não empurraram serviço desnecessário. 3 meses de garantia já mostra que o trabalho é bom. Raro achar mecânico assim hoje em dia."
+            </div>
+            <div class="testimonial-author">Josiane Camargo</div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              "Meu Uno tava no osso, comendo óleo igual louco. Levei lá, desmontaram o motor, fizeram retífica, montaram tudo certinho. Ficó bão de mais, parece que saiu zero da fábrica. E o preço? Melhor que os outros da região. Agora é meu mecânico de confiança."
+            </div>
+            <div class="testimonial-author">Fernando Castilho</div>
           </div>
         </div>
       </div>
