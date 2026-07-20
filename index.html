@@ -15,7 +15,7 @@
   <meta property="og:image" content="https://viniciusxtrad.github.io/mecanica-vision-car/fim-de-mes.jpg">
   <meta property="og:url" content="https://viniciusxtrad.github.io/vision-car">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="description" content="📍 Vision Car - Mecânica no Jardim Hilário. Buscamos seu carro grátis! Preços a partir de R$550 (embreagem) até R$3.500 (motor).">
+  <meta name="description" content="📍 Vision Car - Mecânica no Jardim Hilário. Buscamos seu carro grátis! Preços a partir de R$450 (embreagem) até R$3.500 (motor).">
   <link rel="canonical" href="https://viniciusxtrad.github.io/vision-car">
 
   <style>
@@ -245,7 +245,7 @@
       </div>
       <div class="ip-item">
         <span class="label">👁️ VISITAS HOJE</span>
-        <span class="value" id="visitCount">0</span>
+        <span class="value" id="visitCount">carregando...</span>
       </div>
       <div class="ip-item">
         <span class="live-dot"></span>
@@ -268,53 +268,53 @@
 <!-- ============================================ -->
 <script>
   (function() {
-    // 1. PEGAR IP E LOCALIZAÇÃO via ipapi.co
-    fetch('https://ipapi.co/json/')
-      .then(response => response.json())
-      .then(data => {
-        const ip = data.ip || 'N/A';
-        const city = data.city || 'N/A';
+    const hoje = new Date().toLocaleDateString('pt-BR');
+
+    // 1. CONTADOR DE VISITAS
+    // Usa uma API pública de contagem compartilhada entre TODOS os visitantes.
+    // O contador antigo usava localStorage, que só conta visitas do MESMO
+    // aparelho/navegador — por isso nunca refletia visitas reais do site.
+    const counterKey = 'visioncar-jardimhilario-' + hoje.replace(/\//g, '-');
+    fetch('https://countapi.mileshilliard.com/api/v1/hit/' + counterKey)
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        document.getElementById('visitCount').textContent = data.value;
+      })
+      .catch(function () {
+        document.getElementById('visitCount').textContent = '—';
+      });
+
+    // 2. IP E CIDADE (via ipapi.co)
+    // Agora é independente do contador de visitas, com timeout e fallback,
+    // pra não travar em "carregando..." pra sempre se a API falhar ou
+    // atingir o limite gratuito de requisições.
+    const controller = new AbortController();
+    const timeoutId = setTimeout(function () { controller.abort(); }, 4000);
+
+    fetch('https://ipapi.co/json/', { signal: controller.signal })
+      .then(function (response) { return response.json(); })
+      .then(function (data) {
+        clearTimeout(timeoutId);
+        const ip = data.ip || 'indisponível';
+        const city = data.city || 'indisponível';
         const region = data.region || '';
-        
+
         document.getElementById('userIp').textContent = ip;
         document.getElementById('userCity').textContent = city + (region ? ', ' + region : '');
-        
-        // 2. SALVAR VISITA NO LOCALSTORAGE (contador de visitas únicas por dia)
-        const hoje = new Date().toLocaleDateString('pt-BR');
-        const storageKey = 'visioncar_visits';
-        const lastDateKey = 'visioncar_last_date';
-        
-        let visitCount = parseInt(localStorage.getItem(storageKey)) || 0;
-        const lastDate = localStorage.getItem(lastDateKey);
-        
-        if (lastDate !== hoje) {
-          visitCount = 0;
-          localStorage.setItem(lastDateKey, hoje);
-        }
-        
-        const ipKey = 'visioncar_ip_' + ip + '_' + hoje;
-        if (!localStorage.getItem(ipKey)) {
-          visitCount++;
-          localStorage.setItem(storageKey, visitCount.toString());
-          localStorage.setItem(ipKey, 'true');
-        }
-        
-        document.getElementById('visitCount').textContent = visitCount;
-        
-        // 3. SIMULAR USUÁRIOS AO VIVO
-        const hora = new Date().getHours();
-        let live = 1;
-        if (hora >= 8 && hora <= 12) live = 4 + Math.floor(Math.random() * 3);
-        else if (hora >= 14 && hora <= 18) live = 3 + Math.floor(Math.random() * 3);
-        else if (hora >= 19 && hora <= 22) live = 2 + Math.floor(Math.random() * 2);
-        document.getElementById('liveUsers').textContent = live;
-        
       })
-      .catch(error => {
-        console.log('Erro ao pegar IP:', error);
-        document.getElementById('userIp').textContent = 'não identificado';
-        document.getElementById('userCity').textContent = 'não identificado';
+      .catch(function () {
+        clearTimeout(timeoutId);
+        document.getElementById('userIp').textContent = 'indisponível';
+        document.getElementById('userCity').textContent = 'indisponível';
       });
+
+    // 3. SIMULAR USUÁRIOS AO VIVO
+    const hora = new Date().getHours();
+    let live = 1;
+    if (hora >= 8 && hora <= 12) live = 4 + Math.floor(Math.random() * 3);
+    else if (hora >= 14 && hora <= 18) live = 3 + Math.floor(Math.random() * 3);
+    else if (hora >= 19 && hora <= 22) live = 2 + Math.floor(Math.random() * 2);
+    document.getElementById('liveUsers').textContent = live;
   })();
 </script>
 </body>
