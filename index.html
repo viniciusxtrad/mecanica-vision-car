@@ -15,7 +15,7 @@
   <meta property="og:image" content="https://viniciusxtrad.github.io/mecanica-vision-car/fim-de-mes.jpg">
   <meta property="og:url" content="https://viniciusxtrad.github.io/vision-car">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="description" content="📍 Vision Car - Mecânica no Jardim Hilário. Buscamos seu carro grátis! Preços a partir de R$450 (embreagem) até R$3.500 (motor).">
+  <meta name="description" content="📍 Vision Car - Mecânica no Jardim Hilário. Buscamos seu carro grátis! Preços a partir de R$550 (embreagem) até R$3.500 (motor).">
   <link rel="canonical" href="https://viniciusxtrad.github.io/vision-car">
 
   <style>
@@ -145,7 +145,7 @@
 
   <img src="https://viniciusxtrad.github.io/mecanica-vision-car/image0983.jpg" alt="Vision Car - Oficina Mecânica" class="hero-image" loading="eager">
 
-  <div class="destaque-topo">
+  <div class="destaque-topo" style="display: none;">
     <div class="destaque-titulo-bloco">✅ MECÂNICA <span>NOVA</span> NO JARDIM HILÁRIO ✅</div>
     <div class="destaque-conteudo">
       <div class="nova-headline">
@@ -160,7 +160,7 @@
     </div>
   </div>
 
-  <div class="urgency-bar">⚡ ATENDIMENTO RÁPIDO: (44) 99702-2672 | BUSCAMOS SEU CARRO SEM CUSTO</div>
+  <div class="urgency-bar" style="display: none;">⚡ ATENDIMENTO RÁPIDO: (44) 99702-2672 | BUSCAMOS SEU CARRO SEM CUSTO</div>
 
   <div class="container">
     <div class="pricing-section">
@@ -176,7 +176,7 @@
         <div class="price-card">
           <h3>🔄 TROCA DE EMBREAGEM</h3>
           <div class="price-label">A PARTIR DE</div>
-          <div class="price">R$ 450<small>,00</small></div>
+          <div class="price">R$ 550<small>,00</small></div>
           <div class="service-desc">Kit embreagem + serviço incluso</div>
           <div class="obs">*válido para modelos populares</div>
         </div>
@@ -219,7 +219,7 @@
     </div>
 
     <div class="cta-container">
-      <a href="https://wa.me/5544997022672?text=Olá!%20Vi%20que%20a%20Vision%20Car%20tem%20preços%20a%20partir%20de%20R$450%20para%20embreagem%20e%20R$600%20para%20cabeçote.%20Meu%20carro%20é:" class="btn-whatsapp">
+      <a href="https://wa.me/5544997022672?text=Olá!%20Vi%20que%20a%20Vision%20Car%20tem%20preços%20a%20partir%20de%20R$550%20para%20embreagem%20e%20R$600%20para%20cabeçote.%20Meu%20carro%20é:" class="btn-whatsapp">
         📱 FALAR COM ESPECIALISTA NO WHATSAPP
       </a>
       <a href="tel:+5544997022672" class="btn-phone">
@@ -282,29 +282,39 @@
         document.getElementById('visitCount').textContent = '—';
       });
 
-    // 2. IP E CIDADE (via ipapi.co)
-    // Agora é independente do contador de visitas, com timeout e fallback,
-    // pra não travar em "carregando..." pra sempre se a API falhar ou
-    // atingir o limite gratuito de requisições.
-    const controller = new AbortController();
-    const timeoutId = setTimeout(function () { controller.abort(); }, 4000);
+    // 2. IP E CIDADE
+    // Tenta a ipwho.is primeiro (mais estável, sem chave e sem limite agressivo).
+    // Se falhar, tenta a ipapi.co como reserva. Só mostra "indisponível" se as duas falharem.
+    function buscarIP() {
+      function comTimeout(url, ms) {
+        const controller = new AbortController();
+        const id = setTimeout(function () { controller.abort(); }, ms);
+        return fetch(url, { signal: controller.signal }).finally(function () { clearTimeout(id); });
+      }
 
-    fetch('https://ipapi.co/json/', { signal: controller.signal })
-      .then(function (response) { return response.json(); })
-      .then(function (data) {
-        clearTimeout(timeoutId);
-        const ip = data.ip || 'indisponível';
-        const city = data.city || 'indisponível';
-        const region = data.region || '';
-
-        document.getElementById('userIp').textContent = ip;
-        document.getElementById('userCity').textContent = city + (region ? ', ' + region : '');
-      })
-      .catch(function () {
-        clearTimeout(timeoutId);
-        document.getElementById('userIp').textContent = 'indisponível';
-        document.getElementById('userCity').textContent = 'indisponível';
-      });
+      comTimeout('https://ipwho.is/', 4000)
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (!data || data.success === false) { throw new Error('ipwho.is falhou'); }
+          document.getElementById('userIp').textContent = data.ip || 'indisponível';
+          document.getElementById('userCity').textContent =
+            (data.city || 'indisponível') + (data.region ? ', ' + data.region : '');
+        })
+        .catch(function () {
+          comTimeout('https://ipapi.co/json/', 4000)
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+              document.getElementById('userIp').textContent = data.ip || 'indisponível';
+              document.getElementById('userCity').textContent =
+                (data.city || 'indisponível') + (data.region ? ', ' + data.region : '');
+            })
+            .catch(function () {
+              document.getElementById('userIp').textContent = 'indisponível';
+              document.getElementById('userCity').textContent = 'indisponível';
+            });
+        });
+    }
+    buscarIP();
 
     // 3. SIMULAR USUÁRIOS AO VIVO
     const hora = new Date().getHours();
