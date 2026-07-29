@@ -4,195 +4,286 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
   <title>🚗 VISION CAR - Seu carro quebrou? Chama a Vision Car! 🛠️</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="https://viniciusxtrad.github.io/mecanica-vision-car/image-petroline.jpg">
+  <link rel="preload" as="image" href="https://viniciusxtrad.github.io/mecanica-vision-car/banner033k.png">
 
+  <meta property="og:type" content="website">
   <meta property="og:title" content="SOCORRO MECÂNICO: FICOU NA MÃO? A VISION CAR VAI ATÉ VOCÊ">
   <meta property="og:description" content="🏠 RUA MARIO PRETO, 55 - JARDIM HILÁRIO 📍CONSERTOS EM NOSSA OFICINA OU AONDE VOCÊ ESTIVER">
-  <meta property="og:image" content="https://viniciusxtrad.github.io/mecanica-vision-car/image-petroline.jpg">
+  <meta property="og:image" content="https://viniciusxtrad.github.io/mecanica-vision-car/banner033k.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://viniciusxtrad.github.io/vision-car">
+  <meta property="og:site_name" content="Vision Car">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SOCORRO MECÂNICO: FICOU NA MÃO? A VISION CAR VAI ATÉ VOCÊ">
+  <meta name="twitter:description" content="🏠 RUA MARIO PRETO, 55 - JARDIM HILÁRIO 📍CONSERTOS EM NOSSA OFICINA OU AONDE VOCÊ ESTIVER">
+  <meta name="twitter:image" content="https://viniciusxtrad.github.io/mecanica-vision-car/banner033k.png">
   <meta name="description" content="📍 Vision Car - Mecânica no Jardim Hilário. Buscamos seu carro grátis! Preços a partir de R$550 (embreagem) até R$3.500 (motor).">
   <link rel="canonical" href="https://viniciusxtrad.github.io/vision-car">
 
   <style>
     :root {
       --primary-blue: #0055ff;
-      --bg-black: #0f0f0f;
-      --card-bg: #1a1a1a;
-      --text-gray: #d1d1d1;
+      --primary-blue-dark: #0033aa;
+      --bg-black: #0a0a0a;
+      --card-bg: #151515;
+      --card-bg-2: #1c1c1c;
+      --text-gray: #c9c9c9;
+      --yellow: #ffdd00;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; }
     body { font-family: 'Montserrat', 'Segoe UI', sans-serif; background-color: var(--bg-black); color: #fff; overflow-x: hidden; }
-    h1, .destaque-texto-titulo, .offer-title, .testimonials-title, .destaque-rua, .btn-whatsapp, .btn-phone, .urgency-bar, .price-card h3, .price-label {
+    h1, h2, .destaque-texto-titulo, .offer-title, .testimonials-title, .destaque-rua, .btn-whatsapp, .btn-phone, .urgency-bar, .price-card h3, .price-label, .gallery-title, .section-title {
       font-family: 'Bebas Neue', 'Montserrat', sans-serif;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
-    .wrapper { max-width: 700px; margin: 0 auto; background: var(--bg-black); border-left: 1px solid #333; border-right: 1px solid #333; }
-    .destaque-topo { background: linear-gradient(135deg, #0033cc 0%, #0055ff 50%, #003bb5 100%); }
-    .destaque-titulo-bloco { background: #fff; color: #000; text-align: center; padding: 10px 15px; font-size: 0.75rem; font-weight: 900; letter-spacing: 2px; }
-    .destaque-titulo-bloco span { color: var(--primary-blue); }
-    .destaque-conteudo { padding: 20px; }
-    .nova-headline { text-align: center; margin-bottom: 20px; }
-    .nova-headline h1 { font-size: clamp(1.8rem, 7vw, 2.5rem); color: #fff; text-shadow: 2px 2px 0 #0033aa; }
-    .nova-headline p { font-size: 1.1rem; font-weight: 700; background: rgba(0,0,0,0.4); display: inline-block; padding: 5px 15px; border-radius: 40px; }
-    .destaque-pulsante { display: inline-block; background: #ffdd00; color: #000; font-weight: 900; font-size: 0.75rem; padding: 5px 12px; border-radius: 20px; animation: pulseYellow 2s infinite; }
+    .wrapper { max-width: 700px; margin: 0 auto; background: var(--bg-black); border-left: 1px solid #262626; border-right: 1px solid #262626; }
+
+    /* ---------- BADGE BAR ---------- */
+    .badge-bar {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+      background: linear-gradient(135deg, #001a66, #0033cc 55%, #001a66);
+      padding: 18px 15px;
+      border-bottom: 2px solid var(--primary-blue);
+      border-radius: 0 0 0 0;
+    }
+    .badge-pill {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 30px;
+      display: flex; align-items: center; gap: 6px;
+      white-space: nowrap;
+    }
+    .badge-pill.hot { background: var(--yellow); color: #000; border-color: var(--yellow); animation: pulseYellow 2s infinite; }
     @keyframes pulseYellow { 0%,100%{transform:scale(1)} 50%{transform:scale(1.04)} }
-    .urgency-bar { background: #fff; color: #000; text-align: center; padding: 12px; font-weight: 900; }
-    .hero-image { 
-      width: 100%; 
-      display: block; 
-      height: auto;
-      border-bottom: 2px solid #333; 
+
+    .container { padding: 34px 16px; }
+
+    .section-title { font-size: 1.9rem; text-align: center; margin-bottom: 22px; color: var(--primary-blue); }
+    .section-sub { text-align: center; color: #999; font-size: 0.85rem; margin-top: -14px; margin-bottom: 24px; }
+
+    /* ---------- CARROSSEL DE FOTOS ---------- */
+    .gallery-section { margin: 8px 0 40px; }
+    .carousel {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--card-bg);
+      border: 1px solid #2a2a2a;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
-    .container { padding: 30px 15px; }
-    .pricing-section { margin: 30px 0 20px; }
-    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; text-align: center; margin-bottom: 20px; color: var(--primary-blue); }
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
-    .price-card { background: var(--card-bg); border-radius: 12px; padding: 20px 15px; text-align: center; border: 1px solid #333; transition: border-color 0.2s; }
-    .price-card:hover { border-color: var(--primary-blue); }
-    .price-card h3 { font-size: 1.3rem; color: #fff; margin-bottom: 10px; }
-    .price-label { font-size: 0.9rem; color: #aaa; letter-spacing: 1px; margin-bottom: 5px; }
-    .price { font-size: 2rem; font-weight: 900; color: #ffdd00; margin: 5px 0; }
-    .price small { font-size: 0.9rem; font-weight: normal; color: #ffdd00; }
-    .service-desc { font-size: 0.85rem; color: #bbb; margin: 8px 0; }
-    .obs { font-size: 0.7rem; color: #888; }
-    .special-offer-card { background: var(--card-bg); border: 1px solid #333; border-left: 4px solid var(--primary-blue); border-radius: 12px; padding: 20px; margin: 20px 0; }
-    .offer-title { font-size: 1.6rem; text-align: center; }
-    .benefits-list { display: grid; gap: 12px; margin: 15px 0; }
-    .benefit-item { display: flex; gap: 10px; align-items: center; font-weight: 700; }
-    .benefit-icon { color: var(--primary-blue); font-size: 1.3rem; }
-    .highlight-badge { background: var(--primary-blue); display: inline-block; padding: 5px 15px; border-radius: 30px; font-weight: 900; }
-    .testimonials-grid { display: grid; gap: 18px; margin: 20px 0; }
-    .testimonial-card { background: var(--card-bg); border-radius: 12px; padding: 20px; position: relative; }
-    .testimonial-card::before { content: '"'; font-size: 3rem; color: var(--primary-blue); opacity: 0.3; position: absolute; top: 5px; left: 10px; }
-    .testimonial-text { font-style: italic; color: var(--text-gray); padding-left: 20px; margin-bottom: 10px; }
-    .testimonial-author { text-align: right; color: var(--primary-blue); font-weight: bold; }
-    .cta-container { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 30px; }
-    .btn-whatsapp, .btn-phone { width: 100%; max-width: 320px; padding: 14px; font-size: 1.2rem; text-align: center; text-decoration: none; border-radius: 12px; font-weight: 700; transition: 0.2s; }
-    .btn-whatsapp { background: #25d366; color: #fff; }
+    .carousel-track-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .carousel-caption {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      padding: 30px 16px 14px;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #fff;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      z-index: 5;
+      backdrop-filter: blur(4px);
+      transition: background 0.2s;
+      user-select: none;
+    }
+    .carousel-arrow:hover { background: var(--primary-blue); }
+    .carousel-arrow.prev { left: 12px; }
+    .carousel-arrow.next { right: 12px; }
+    .carousel-dots {
+      display: flex; justify-content: center; gap: 8px;
+      padding: 14px 0;
+      background: var(--card-bg);
+    }
+    .carousel-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #3a3a3a;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .carousel-dot.active { background: var(--primary-blue); width: 22px; border-radius: 5px; }
+
+    /* ---------- PRICING ---------- */
+    .pricing-section { margin: 8px 0 20px; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .price-card { background: var(--card-bg); border-radius: 14px; padding: 22px 16px; text-align: center; border: 1px solid #262626; transition: 0.25s; }
+    .price-card:hover { border-color: var(--primary-blue); transform: translateY(-4px); }
+    .price-card h3 { font-size: 1.25rem; color: #fff; margin-bottom: 10px; }
+    .price-label { font-size: 0.85rem; color: #999; letter-spacing: 1px; margin-bottom: 5px; }
+    .price { font-size: 1.9rem; font-weight: 900; color: var(--yellow); margin: 5px 0; }
+    .price small { font-size: 0.85rem; font-weight: normal; color: var(--yellow); }
+    .service-desc { font-size: 0.82rem; color: #aaa; margin: 8px 0; }
+    .obs { font-size: 0.68rem; color: #777; }
+    .pricing-note { text-align: center; font-size: 0.78rem; color: #888; margin-top: 14px; }
+
+    /* ---------- OFFER CARD ---------- */
+    .special-offer-card { background: var(--card-bg); border: 1px solid #262626; border-left: 4px solid var(--primary-blue); border-radius: 14px; padding: 24px 20px; margin: 36px 0; }
+    .offer-title { font-size: 1.5rem; text-align: center; margin-bottom: 16px; }
+    .benefits-list { display: grid; gap: 13px; }
+    .benefit-item { display: flex; gap: 10px; align-items: center; font-weight: 700; font-size: 0.92rem; }
+    .benefit-icon { color: var(--primary-blue); font-size: 1.3rem; flex-shrink: 0; }
+
+    /* ---------- TESTIMONIALS ---------- */
+    .testimonials-section { margin: 40px 0; }
+    .testimonials-grid { display: grid; gap: 16px; }
+    .testimonial-card { background: var(--card-bg); border-radius: 14px; padding: 22px 20px; position: relative; border: 1px solid #262626; }
+    .testimonial-card::before { content: '"'; font-family: Georgia, serif; font-size: 3rem; color: var(--primary-blue); opacity: 0.3; position: absolute; top: 2px; left: 12px; line-height: 1; }
+    .testimonial-text { font-style: italic; color: var(--text-gray); padding-left: 18px; margin-bottom: 12px; font-size: 0.92rem; }
+    .testimonial-author { text-align: right; color: var(--primary-blue); font-weight: bold; font-size: 0.85rem; }
+
+    .disclaimer-global { background: var(--card-bg); border: 1px solid #262626; border-left: 4px solid var(--primary-blue); border-radius: 14px; padding: 20px; margin: 30px 0; text-align: center; }
+    .disclaimer-global h3 { font-size: 1.05rem; margin-bottom: 10px; color: var(--primary-blue); font-family: 'Bebas Neue', sans-serif; letter-spacing: 1px; }
+    .disclaimer-global p { font-size: 0.85rem; color: #ccc; margin: 4px 0; }
+
+    /* ---------- CTA ---------- */
+    .cta-container { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 36px; }
+    .btn-whatsapp, .btn-phone { width: 100%; max-width: 320px; padding: 15px; font-size: 1.15rem; text-align: center; text-decoration: none; border-radius: 12px; font-weight: 700; transition: 0.2s; }
+    .btn-whatsapp { background: #25d366; color: #fff; box-shadow: 0 8px 20px rgba(37,211,102,0.3); }
+    .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(37,211,102,0.45); }
     .btn-phone { background: transparent; border: 2px solid #fff; color: #fff; }
-    .footer { 
-      background: #000; 
-      padding: 20px; 
-      text-align: center; 
-      font-size: 0.75rem; 
-      color: #666;
-      border-top: 1px solid #333;
-    }
+
+    /* ---------- FOOTER ---------- */
+    .footer { background: #000; padding: 26px 20px; text-align: center; font-size: 0.75rem; color: #666; border-top: 1px solid #262626; }
     .footer .footer-ip {
       background: linear-gradient(135deg, #0a0a1a, #1a1a3e);
       border: 1px solid var(--primary-blue);
       border-radius: 12px;
       padding: 12px 15px;
-      margin: 15px auto 10px auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
+      margin: 0 auto 16px auto;
+      display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px;
       max-width: 600px;
     }
-    .footer .ip-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255,255,255,0.05);
-      padding: 4px 12px;
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.05);
-    }
-    .footer .ip-item .label { 
-      color: #888; 
-      font-size: 0.6rem; 
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .footer .ip-item .value { 
-      font-weight: 900; 
-      color: #00ff88;
-      font-size: 0.8rem;
-      font-family: 'Courier New', monospace;
-    }
-    .footer .live-dot {
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      background: #00ff88;
-      border-radius: 50%;
-      animation: pulse-dot 1.5s infinite;
-    }
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.3; transform: scale(0.8); }
-    }
-    .disclaimer-global { background: var(--card-bg); border: 1px solid #333; border-left: 4px solid var(--primary-blue); border-radius: 12px; padding: 15px; margin: 20px 0; text-align: center; }
+    .footer .ip-item { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.05); padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
+    .footer .ip-item .label { color: #888; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    .footer .ip-item .value { font-weight: 900; color: #00ff88; font-size: 0.8rem; font-family: 'Courier New', monospace; }
+    .footer .live-dot { display: inline-block; width: 6px; height: 6px; background: #00ff88; border-radius: 50%; animation: pulse-dot 1.5s infinite; }
+    @keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.3; transform: scale(0.8); } }
+    .footer p { margin: 6px 0; }
+    .footer strong { color: var(--primary-blue); }
 
-    @media (max-width: 480px) { 
-      .pricing-grid { grid-template-columns: 1fr; } 
-      .price { font-size: 1.6rem; } 
+    @media (max-width: 480px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+      .price { font-size: 1.6rem; }
       .btn-whatsapp, .btn-phone { font-size: 1rem; }
       .footer .footer-ip { flex-direction: column; gap: 5px; }
+      .carousel-track-wrap { aspect-ratio: 1 / 1; }
     }
   </style>
 </head>
 <body>
 <div class="wrapper">
 
-  <img src="https://viniciusxtrad.github.io/mecanica-vision-car/image0983.jpg" alt="Vision Car - Oficina Mecânica" class="hero-image" loading="eager">
-
-  <div class="destaque-topo" style="display: none;">
-    <div class="destaque-titulo-bloco">✅ MECÂNICA <span>NOVA</span> NO JARDIM HILÁRIO ✅</div>
-    <div class="destaque-conteudo">
-      <div class="nova-headline">
-        <h1>🚨 SEU CARRO QUEBROU?<br>CHAMA A VISION CAR</h1>
-        <p>🚗 BUSCAMOS SEU CARRO SEM CUSTO | MELHOR PREÇO DA CIDADE</p>
-      </div>
-      <div class="destaque-linha-endereco" style="background: rgba(0,0,0,0.4); border-radius: 10px; padding: 10px; margin: 15px 0;">
-        <span>📍</span>
-        <div><strong>Rua Mario Preto, 55 - Jardim Hilário, Terra Boa - PR</strong><br><small>Segunda rua depois do Mercado Real (subindo)</small></div>
-      </div>
-      <div style="text-align: center;"><span class="destaque-pulsante">🚗 RETIRADA GRÁTIS NO SEU BAIRRO!</span></div>
-    </div>
+  <div class="badge-bar">
+    <span class="badge-pill hot">🚗 Retirada grátis no bairro</span>
+    <span class="badge-pill">✅ 3 meses de garantia</span>
+    <span class="badge-pill">📍 Jardim Hilário</span>
   </div>
 
-  <div class="urgency-bar" style="display: none;">⚡ ATENDIMENTO RÁPIDO: (44) 99702-2672 | BUSCAMOS SEU CARRO SEM CUSTO</div>
-
   <div class="container">
+
+    <!-- ===== CARROSSEL DE FOTOS ===== -->
+    <div class="gallery-section">
+      <div class="section-title">🔧 Nosso Trabalho Fala Por Si</div>
+      <p class="section-sub">Serviços reais, feitos na nossa oficina</p>
+
+      <div class="carousel" id="carousel">
+        <div class="carousel-track-wrap">
+          <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-slide">
+              <img src="https://viniciusxtrad.github.io/mecanica-vision-car/car033.jpg" alt="Serviço Vision Car">
+              <div class="carousel-caption">Serviço realizado na oficina</div>
+            </div>
+            <div class="carousel-slide">
+              <img src="https://viniciusxtrad.github.io/mecanica-vision-car/IMG_20260528_173943.jpg" alt="Serviço Vision Car">
+              <div class="carousel-caption">Mais um cliente satisfeito</div>
+            </div>
+            <div class="carousel-slide">
+              <img src="https://viniciusxtrad.github.io/mecanica-vision-car/IMG_20250927_095427134.jpg" alt="Serviço Vision Car">
+              <div class="carousel-caption">Trabalho de precisão</div>
+            </div>
+          </div>
+          <div class="carousel-arrow prev" onclick="moveCarousel(-1)">‹</div>
+          <div class="carousel-arrow next" onclick="moveCarousel(1)">›</div>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+    </div>
+
+    <!-- ===== PREÇOS ===== -->
     <div class="pricing-section">
-      <div class="section-title">🔥 PREÇOS PROMOCIONAIS DE LANÇAMENTO 🔥</div>
+      <div class="section-title">🔥 Preços Promocionais de Lançamento</div>
       <div class="pricing-grid">
         <div class="price-card">
-          <h3>🏎️ MOTOR COMPLETO + RETIFICA</h3>
+          <h3>🏎️ Motor Completo + Retífica</h3>
           <div class="price-label">A PARTIR DE</div>
           <div class="price">R$ 3.500<small>,00</small></div>
           <div class="service-desc">Retífica completa, troca de anéis, juntas e comando</div>
           <div class="obs">*mão de obra especializada</div>
         </div>
         <div class="price-card">
-          <h3>🔄 TROCA DE EMBREAGEM</h3>
+          <h3>🔄 Troca de Embreagem</h3>
           <div class="price-label">A PARTIR DE</div>
           <div class="price">R$ 550<small>,00</small></div>
           <div class="service-desc">Kit embreagem + serviço incluso</div>
           <div class="obs">*válido para modelos populares</div>
         </div>
         <div class="price-card">
-          <h3>🔧 RETIFICA DE CABEÇOTE</h3>
+          <h3>🔧 Retífica de Cabeçote</h3>
           <div class="price-label">A PARTIR DE</div>
           <div class="price">R$ 600<small>,00</small></div>
           <div class="service-desc">Retífica + mão de obra de montagem</div>
           <div class="obs">*inclui troca de válvulas se necessário</div>
         </div>
       </div>
-      <p style="text-align: center; font-size: 0.8rem; margin-top: 10px;">✅ Preços são a partir de, sujeitos à avaliação do veículo. Consulte condições e valores exatos para o seu modelo.</p>
+      <p class="pricing-note">✅ Preços a partir de, sujeitos à avaliação do veículo. Consulte condições exatas para o seu modelo.</p>
     </div>
 
+    <!-- ===== DIFERENCIAIS ===== -->
     <div class="special-offer-card">
-      <div class="offer-title">🎯 POR QUE A VISION CAR É A MELHOR?</div>
+      <div class="offer-title">🎯 Por Que a Vision Car é a Melhor?</div>
       <div class="benefits-list">
         <div class="benefit-item"><span class="benefit-icon">📍</span> Localizada no Jardim Hilário – perto de você</div>
         <div class="benefit-item"><span class="benefit-icon">🚗</span> Busca e entrega GRÁTIS no bairro e região central</div>
@@ -202,17 +293,18 @@
       </div>
     </div>
 
+    <!-- ===== DEPOIMENTOS ===== -->
     <div class="testimonials-section">
-      <div class="section-title">💬 QUEM CONFIOU RECOMENDA</div>
+      <div class="section-title">💬 Quem Confiou Recomenda</div>
       <div class="testimonials-grid">
-        <div class="testimonial-card"><div class="testimonial-text">"Meu Kadet tava sem força, arrumaram o motor e ficou um foguete! Preço justo e ainda buscaram em casa."</div><div class="testimonial-author">Aline Silva</div></div>
-        <div class="testimonial-card"><div class="testimonial-text">"S10 com problema nos bicos, resolveram rápido e me deram 3 meses de garantia. Melhor mecânica do Jardim Hilário."</div><div class="testimonial-author">Abener Souza</div></div>
-        <div class="testimonial-card"><div class="testimonial-text">"Onix com barulho na correia, resolvido no mesmo dia. Preço muito abaixo da concorrência. Nota 10!"</div><div class="testimonial-author">Camila Soares</div></div>
+        <div class="testimonial-card"><div class="testimonial-text">Meu Kadet tava sem força, arrumaram o motor e ficou um foguete! Preço justo e ainda buscaram em casa.</div><div class="testimonial-author">Aline Silva</div></div>
+        <div class="testimonial-card"><div class="testimonial-text">S10 com problema nos bicos, resolveram rápido e me deram 3 meses de garantia. Melhor mecânica do Jardim Hilário.</div><div class="testimonial-author">Abener Souza</div></div>
+        <div class="testimonial-card"><div class="testimonial-text">Onix com barulho na correia, resolvido no mesmo dia. Preço muito abaixo da concorrência. Nota 10!</div><div class="testimonial-author">Camila Soares</div></div>
       </div>
     </div>
 
     <div class="disclaimer-global">
-      <h3>📍 ATENÇÃO MORADORES DO JARDIM HILÁRIO</h3>
+      <h3>📍 Atenção Moradores do Jardim Hilário</h3>
       <p>✅ Retirada e entrega <strong>GRÁTIS</strong> para todo o bairro e Terra Boa</p>
       <p>✅ <strong>Garantia de 3 meses</strong> em reparos de motor, câmbio, embreagem e sistema elétrico</p>
       <p>✅ <strong>Orçamento sem compromisso</strong> – ligue ou mande WhatsApp agora mesmo!</p>
@@ -220,38 +312,21 @@
 
     <div class="cta-container">
       <a href="https://wa.me/5544997022672?text=Olá!%20Vi%20que%20a%20Vision%20Car%20tem%20preços%20a%20partir%20de%20R$550%20para%20embreagem%20e%20R$600%20para%20cabeçote.%20Meu%20carro%20é:" class="btn-whatsapp">
-        📱 FALAR COM ESPECIALISTA NO WHATSAPP
+        📱 Falar com Especialista no WhatsApp
       </a>
       <a href="tel:+5544997022672" class="btn-phone">
-        📞 LIGAR AGORA E GARANTIR O PREÇO
+        📞 Ligar Agora e Garantir o Preço
       </a>
     </div>
   </div>
 
-  <!-- ============================================ -->
-  <!-- RODAPÉ COM O CONTADOR DE IP                 -->
-  <!-- ============================================ -->
   <div class="footer">
     <div class="footer-ip">
-      <div class="ip-item">
-        <span class="label">🌐 SEU IP</span>
-        <span class="value" id="userIp">carregando...</span>
-      </div>
-      <div class="ip-item">
-        <span class="label">📍 CIDADE</span>
-        <span class="value" id="userCity">carregando...</span>
-      </div>
-      <div class="ip-item">
-        <span class="label">👁️ VISITAS HOJE</span>
-        <span class="value" id="visitCount">carregando...</span>
-      </div>
-      <div class="ip-item">
-        <span class="live-dot"></span>
-        <span class="label">AO VIVO</span>
-        <span class="value" id="liveUsers">1</span>
-      </div>
+      <div class="ip-item"><span class="label">🌐 SEU IP</span><span class="value" id="userIp">carregando...</span></div>
+      <div class="ip-item"><span class="label">📍 CIDADE</span><span class="value" id="userCity">carregando...</span></div>
+      <div class="ip-item"><span class="label">👁️ VISITAS HOJE</span><span class="value" id="visitCount">carregando...</span></div>
+      <div class="ip-item"><span class="live-dot"></span><span class="label">AO VIVO</span><span class="value" id="liveUsers">1</span></div>
     </div>
-
     <p><strong>VISION CAR - CENTRO AUTOMOTIVO</strong></p>
     <p>📍 Rua Mario Preto, 55 - Jardim Hilário - Terra Boa - PR</p>
     <p>📞 (44) 99702-2672</p>
@@ -261,62 +336,92 @@
   </div>
 </div>
 
-<!-- ============================================ -->
-<!-- SCRIPT: PEGA IP, CIDADE E CONTADOR DE VISITAS -->
-<!-- ============================================ -->
 <script>
+  // ============================================
+  // CARROSSEL DE FOTOS
+  // ============================================
+  (function() {
+    const track = document.getElementById('carouselTrack');
+    const slides = Array.from(track.children);
+    const dotsWrap = document.getElementById('carouselDots');
+    let index = 0;
+    let autoplayTimer;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    function update() {
+      track.style.transform = 'translateX(-' + (index * 100) + '%)';
+      dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    }
+
+    function goTo(i) {
+      index = (i + slides.length) % slides.length;
+      update();
+      resetAutoplay();
+    }
+
+    window.moveCarousel = function(dir) { goTo(index + dir); };
+
+    function resetAutoplay() {
+      clearInterval(autoplayTimer);
+      autoplayTimer = setInterval(() => goTo(index + 1), 4500);
+    }
+
+    // swipe touch
+    let startX = 0;
+    const wrap = document.querySelector('.carousel-track-wrap');
+    wrap.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+    wrap.addEventListener('touchend', e => {
+      const diff = e.changedTouches[0].clientX - startX;
+      if (Math.abs(diff) > 40) { diff > 0 ? goTo(index - 1) : goTo(index + 1); }
+    }, { passive: true });
+
+    resetAutoplay();
+  })();
+
+  // ============================================
+  // IP, CIDADE E CONTADOR DE VISITAS
+  // ============================================
   (function() {
     const hoje = new Date().toLocaleDateString('pt-BR');
-
-    // 1. CONTADOR DE VISITAS
-    // Usa uma API pública de contagem compartilhada entre TODOS os visitantes.
-    // O contador antigo usava localStorage, que só conta visitas do MESMO
-    // aparelho/navegador — por isso nunca refletia visitas reais do site.
     const counterKey = 'visioncar-jardimhilario-' + hoje.replace(/\//g, '-');
     fetch('https://countapi.mileshilliard.com/api/v1/hit/' + counterKey)
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
-        document.getElementById('visitCount').textContent = data.value;
+      .then(r => r.json())
+      .then(data => { document.getElementById('visitCount').textContent = data.value; })
+      .catch(() => { document.getElementById('visitCount').textContent = '—'; });
+
+    function comTimeout(url, ms) {
+      const controller = new AbortController();
+      const id = setTimeout(() => controller.abort(), ms);
+      return fetch(url, { signal: controller.signal }).finally(() => clearTimeout(id));
+    }
+
+    comTimeout('https://ipwho.is/', 4000)
+      .then(r => r.json())
+      .then(data => {
+        if (!data || data.success === false) throw new Error();
+        document.getElementById('userIp').textContent = data.ip || 'indisponível';
+        document.getElementById('userCity').textContent = (data.city || 'indisponível') + (data.region ? ', ' + data.region : '');
       })
-      .catch(function () {
-        document.getElementById('visitCount').textContent = '—';
+      .catch(() => {
+        comTimeout('https://ipapi.co/json/', 4000)
+          .then(r => r.json())
+          .then(data => {
+            document.getElementById('userIp').textContent = data.ip || 'indisponível';
+            document.getElementById('userCity').textContent = (data.city || 'indisponível') + (data.region ? ', ' + data.region : '');
+          })
+          .catch(() => {
+            document.getElementById('userIp').textContent = 'indisponível';
+            document.getElementById('userCity').textContent = 'indisponível';
+          });
       });
 
-    // 2. IP E CIDADE
-    // Tenta a ipwho.is primeiro (mais estável, sem chave e sem limite agressivo).
-    // Se falhar, tenta a ipapi.co como reserva. Só mostra "indisponível" se as duas falharem.
-    function buscarIP() {
-      function comTimeout(url, ms) {
-        const controller = new AbortController();
-        const id = setTimeout(function () { controller.abort(); }, ms);
-        return fetch(url, { signal: controller.signal }).finally(function () { clearTimeout(id); });
-      }
-
-      comTimeout('https://ipwho.is/', 4000)
-        .then(function (r) { return r.json(); })
-        .then(function (data) {
-          if (!data || data.success === false) { throw new Error('ipwho.is falhou'); }
-          document.getElementById('userIp').textContent = data.ip || 'indisponível';
-          document.getElementById('userCity').textContent =
-            (data.city || 'indisponível') + (data.region ? ', ' + data.region : '');
-        })
-        .catch(function () {
-          comTimeout('https://ipapi.co/json/', 4000)
-            .then(function (r) { return r.json(); })
-            .then(function (data) {
-              document.getElementById('userIp').textContent = data.ip || 'indisponível';
-              document.getElementById('userCity').textContent =
-                (data.city || 'indisponível') + (data.region ? ', ' + data.region : '');
-            })
-            .catch(function () {
-              document.getElementById('userIp').textContent = 'indisponível';
-              document.getElementById('userCity').textContent = 'indisponível';
-            });
-        });
-    }
-    buscarIP();
-
-    // 3. SIMULAR USUÁRIOS AO VIVO
     const hora = new Date().getHours();
     let live = 1;
     if (hora >= 8 && hora <= 12) live = 4 + Math.floor(Math.random() * 3);
